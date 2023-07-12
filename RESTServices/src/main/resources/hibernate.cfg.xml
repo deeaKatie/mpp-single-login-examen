@@ -18,6 +18,8 @@
         <!-- Mapped objects -->
         <mapping class="model.Game"/>
         <mapping class="model.User"/>
+        <mapping class="model.Question"/>
+        <mapping class="model.Response"/>
 
     </session-factory>
 </hibernate-configuration>

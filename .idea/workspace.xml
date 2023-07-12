@@ -4,8 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccfa7e6b-654c-463b-a268-93519fa570db" name="Changes" comment="fixed some more stuff">
+    <list default="true" id="ccfa7e6b-654c-463b-a268-93519fa570db" name="Changes" comment="base app">
+      <change afterPath="$PROJECT_DIR$/Model/src/main/java/dto/GameDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/main/java/model/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/main/java/model/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/src/main/java/repository/IQuestionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/src/main/java/repository/IResponseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/src/main/java/repository/QuestionDBRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/src/main/java/repository/ResponseDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/controller/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/controller/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/controller/PlayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/controller/PlayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/LogInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/LogInView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/main/java/dto/ActionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/dto/ActionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/main/java/dto/ListItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/dto/ListItemDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/main/java/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Networking/src/main/java/rpcprotocol/ClientRpcReflectionWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Networking/src/main/java/rpcprotocol/ClientRpcReflectionWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Networking/src/main/java/rpcprotocol/ServicesRpcProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Networking/src/main/java/rpcprotocol/ServicesRpcProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistance/src/main/java/repository/GameDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/src/main/java/repository/GameDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistance/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RESTServices/src/main/java/rest/RestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/RESTServices/src/main/java/rest/RestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RESTServices/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RESTServices/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Database.db" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/StartServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/StartServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/src/main/java/services/IServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/Services/src/main/java/services/IServices.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +57,42 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="rezolvare_razboi" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rezolvare_razboi" type="f1a62948:ProjectNode" />
+                <item name="Client" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rezolvare_razboi" type="f1a62948:ProjectNode" />
+                <item name="Client" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rezolvare_razboi" type="f1a62948:ProjectNode" />
+                <item name="Client" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rezolvare_razboi" type="f1a62948:ProjectNode" />
+                <item name="Server" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rezolvare_razboi" type="f1a62948:ProjectNode" />
+                <item name="Server" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rezolvare_razboi" type="f1a62948:ProjectNode" />
+                <item name="Server" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -68,31 +129,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Andreea/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;279174901a5dbb0f5c81f9163e56eeb2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "C:/Users/deeal/Downloads/Gradianto-5.3.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "279174901a5dbb0f5c81f9163e56eeb2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -118,7 +180,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.rezolvare_razboi:Client [run]">
+  <component name="RunManager" selected="Spring Boot.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="rezolvare_razboi.Client.main" />
@@ -208,7 +270,7 @@
       <workItem from="1688726907524" duration="8365000" />
       <workItem from="1688847310299" duration="667000" />
       <workItem from="1688890043970" duration="12335000" />
-      <workItem from="1689022529361" duration="399000" />
+      <workItem from="1689022529361" duration="9474000" />
     </task>
     <task id="LOCAL-00001" summary="first working version, w/ log in &amp; showing users">
       <created>1688574514383</created>
@@ -317,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688900336080</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="base app">
+      <created>1689022950816</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689022950816</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,6 +417,7 @@
     <MESSAGE value="added rest services" />
     <MESSAGE value="fixed service, proxy, worker, controller" />
     <MESSAGE value="fixed some more stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some more stuff" />
+    <MESSAGE value="base app" />
+    <option name="LAST_COMMIT_MESSAGE" value="base app" />
   </component>
 </project>

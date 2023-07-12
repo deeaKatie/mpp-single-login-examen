@@ -1,5 +1,6 @@
 package controller;
 
+import dto.GameDTO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,8 +20,6 @@ public class LogInController {
     private Button buttonLogIn;
     @FXML
     private TextField textFieldUsername;
-    @FXML
-    private TextField textFieldPassword;
 
     private IServices service;
 
@@ -30,21 +29,21 @@ public class LogInController {
 
     public void handleLogIn(ActionEvent actionEvent) throws IOException {
         String name = textFieldUsername.getText();
-        String password = textFieldPassword.getText();
 
         try{
-            User user = new User(name,password);
+            User user = new User(name,"");
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
 
             Stage stage = (Stage) buttonLogIn.getScene().getWindow();
             PlayController playCtrl = fxmlLoader.getController();
 
-            user = service.checkLogIn(user, playCtrl);
+            GameDTO gameDTO = service.checkLogIn(user, playCtrl);
             System.out.println("USER: " + user);
 
             playCtrl.setService(service);
-            playCtrl.setUser(user);
+            playCtrl.setUser(gameDTO.getUser());
+            playCtrl.setInitGame(gameDTO);
             playCtrl.initVisuals();
             stage.setScene(scene);
 

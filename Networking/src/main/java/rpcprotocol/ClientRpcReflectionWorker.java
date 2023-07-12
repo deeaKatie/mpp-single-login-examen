@@ -1,6 +1,7 @@
 package rpcprotocol;
 
 import dto.ActionDTO;
+import dto.GameDTO;
 import dto.ListItemsDTO;
 import dto.UpdateDTO;
 import model.User;
@@ -95,8 +96,8 @@ public class ClientRpcReflectionWorker implements Runnable, IObserver {
         User user = (User) request.data();
 
         try {
-            User newUser = this.service.checkLogIn(user, this);
-            return (new Response.Builder()).type(ResponseType.OK).data(newUser).build();
+            GameDTO game = this.service.checkLogIn(user, this);
+            return (new Response.Builder()).type(ResponseType.OK).data(game).build();
         } catch (ServiceException ex) {
             this.connected = false;
             return (new Response.Builder()).type(ResponseType.ERROR).data(ex.getMessage()).build();
@@ -128,13 +129,13 @@ public class ClientRpcReflectionWorker implements Runnable, IObserver {
         }
     }
 
-    private Response handleMAKE_ACTION(Request request) {
+    private Response handleMADE_ACTION(Request request) {
         System.out.println("WORKER ->" + request.type());
         ActionDTO actionDTO = (ActionDTO) request.data();
 
         try {
-            service.madeAction(actionDTO);
-            return (new Response.Builder()).type(ResponseType.OK).build();
+            GameDTO game = service.madeAction(actionDTO);
+            return (new Response.Builder()).type(ResponseType.OK).data(game).build();
         } catch (ServiceException ex) {
             return (new Response.Builder()).type(ResponseType.ERROR).data(ex.getMessage()).build();
         }

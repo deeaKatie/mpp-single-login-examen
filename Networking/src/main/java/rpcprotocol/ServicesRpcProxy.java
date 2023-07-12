@@ -1,8 +1,10 @@
 package rpcprotocol;
 
 import dto.ActionDTO;
+import dto.GameDTO;
 import dto.ListItemsDTO;
 import dto.UpdateDTO;
+import model.Game;
 import model.User;
 import services.IObserver;
 import services.IServices;
@@ -131,7 +133,7 @@ public class ServicesRpcProxy implements IServices {
     }
 
     @Override
-    public User checkLogIn(User user, IObserver client) throws ServiceException {
+    public GameDTO checkLogIn(User user, IObserver client) throws ServiceException {
         System.out.println("PROXY -> checkLogIn");
 
         initializeConnection();
@@ -141,18 +143,17 @@ public class ServicesRpcProxy implements IServices {
 
         if (response.type() == ResponseType.OK) {
             this.client = client;
-            User foundUser = (User)response.data();
-            user.setId(foundUser.getId());
-            loggedUser = foundUser;
-            return foundUser;
+            GameDTO gameDTO = (GameDTO)response.data();
+            user.setId(gameDTO.getUser().getId());
+            loggedUser = gameDTO.getUser();
+            return gameDTO;
 
         } else if (response.type() == ResponseType.ERROR) {
             String err = response.data().toString();
             closeConnection();
             throw new ServiceException(err);
         }
-
-        return null;
+        throw new ServiceException("No User found");
     }
 
     @Override
@@ -188,7 +189,7 @@ public class ServicesRpcProxy implements IServices {
 
 
     @Override
-    public void madeAction(ActionDTO action) throws ServiceException {
+    public GameDTO madeAction(ActionDTO action) throws ServiceException {
         System.out.println("PROXY -> madeAction");
         Request req = (new Request.Builder()).type(RequestType.MADE_ACTION).data(action).build();
         sendRequest(req);
@@ -196,9 +197,11 @@ public class ServicesRpcProxy implements IServices {
 
         if (response.type() == ResponseType.OK) {
             System.out.println("PROXY -> response OK");
+            return (GameDTO) response.data();
         } else if (response.type() == ResponseType.ERROR) {
             throw new ServiceException("Error " + response.data().toString());
         }
+        return null;
     }
 
 

@@ -1,6 +1,6 @@
 package repository;
 import exception.RepositoryException;
-import model.Game;
+import model.Question;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -16,21 +16,19 @@ import org.springframework.stereotype.Component;
 import java.util.*;
 
 @Component
-public class GameDBRepository implements IGameDBRepository{
-
-    private static final Logger logger= LogManager.getLogger(GameDBRepository.class.getName());
+public class QuestionDBRepository implements IQuestionRepository {
+    private static final Logger logger= LogManager.getLogger(QuestionDBRepository.class.getName());
     private Session session;
 
-
     @Autowired
-    public GameDBRepository() {
+    public QuestionDBRepository() {
         StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
         SessionFactory factory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
         session = factory.openSession();
     }
 
     @Override
-    public Game add(Game entity) {
+    public Question add(Question entity) {
         logger.traceEntry();
         Transaction transaction = session.beginTransaction();
         Long id = (Long) session.save(entity);
@@ -41,7 +39,7 @@ public class GameDBRepository implements IGameDBRepository{
     }
 
     @Override
-    public void delete(Game entity) {
+    public void delete(Question entity) {
         logger.traceEntry();
         Transaction transaction = session.beginTransaction();
         session.delete(entity);
@@ -50,7 +48,7 @@ public class GameDBRepository implements IGameDBRepository{
     }
 
     @Override
-    public void update(Game entity) {
+    public void update(Question entity) {
         logger.traceEntry();
         Transaction transaction = session.beginTransaction();
         session.update(entity);
@@ -59,36 +57,21 @@ public class GameDBRepository implements IGameDBRepository{
     }
 
     @Override
-    public Game findById(Long id) throws RepositoryException {
+    public Question findById(Long id) throws RepositoryException {
         logger.traceEntry();
         Transaction transaction = session.beginTransaction();
-        Game entity = session.get(Game.class, id);
+        Question entity = session.get(Question.class, id);
         transaction.commit();
         logger.traceExit();
         return entity;
     }
 
     @Override
-    public Iterable<Game> getAll() {
+    public Iterable<Question> getAll() {
         logger.traceEntry();
-        Query query = session.createQuery("from Game");
-        List<Game> entities = query.list();
+        Query query = session.createQuery("from Question");
+        List<Question> entities = query.list();
         logger.traceExit();
         return entities;
     }
-
-
-    public Game findBy(String parameter) throws RepositoryException {
-        logger.traceEntry();
-        Query query = session.createQuery("from Game where id = :p");
-        query.setParameter("p", parameter);
-        Game entity = (Game) query.uniqueResult();
-        if (entity == null) {
-            logger.error("No CLASSTR found!");
-            throw new RepositoryException("No CLASSTR found!");
-        }
-        logger.traceExit();
-        return entity;
-    }
-
 }

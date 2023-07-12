@@ -1,21 +1,22 @@
 package dto;
 
+import model.Game;
 import model.HasId;
 import model.User;
 
 public class ListItemDTO implements HasId<Long> {
 
-    private User user;
+    private Game game;
 
     public ListItemDTO() {
     }
 
-    public User getUser() {
-        return user;
+    public Game getGame() {
+        return game;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setGame(Game game) {
+        this.game = game;
     }
 
     @Override
@@ -30,6 +31,6 @@ public class ListItemDTO implements HasId<Long> {
 
     @Override
     public String toString() {
-        return "user= " + user;
+        return "G= " + game;
     }
 }
